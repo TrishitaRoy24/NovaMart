@@ -1,0 +1,45 @@
+<nav>
+  <div class="nav-inner">
+    <!-- Logo -->
+    <div class="nav-logo" onclick="showPage('dashboard')">
+      <div class="nav-logo-icon">🛍</div>
+      <div>
+        <div class="nav-logo-text">Nova<span>Mart</span></div>
+        <div class="nav-logo-sub">Premium Store</div>
+      </div>
+    </div>
+
+    <!-- Search -->
+    <div class="nav-search">
+      <span class="search-ico">🔍</span>
+      <input type="text" placeholder="Search products, brands…" />
+    </div>
+
+    <!-- Nav Links -->
+    <div class="nav-links">
+      <a id="nav-dashboard" class="active" onclick="showPage('dashboard')"
+        >Home</a
+      >
+      <a id="nav-products" onclick="showPage('products')">Products</a>
+      <a id="nav-favorites" onclick="showPage('favorites')">Favorites</a>
+      <a id="nav-cart" onclick="showPage('cart')">Cart</a>
+    </div>
+
+    <!-- Actions -->
+    <div class="nav-actions">
+      <button
+        class="nav-icon-btn"
+        onclick="showPage('favorites')"
+        title="Favorites"
+      >
+        ♡<span class="badge" id="fav-badge">4</span>
+      </button>
+      <button class="nav-icon-btn" onclick="showPage('cart')" title="Cart">
+        🛒<span class="badge" id="cart-badge">3</span>
+      </button>
+      <div class="nav-avatar" onclick="showPage('profile')" title="Profile">
+        J
+      </div>
+    </div>
+  </div>
+</nav>
