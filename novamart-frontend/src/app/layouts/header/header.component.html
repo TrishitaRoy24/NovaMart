@@ -1,7 +1,7 @@
 <nav>
   <div class="nav-inner">
     <!-- Logo -->
-    <div class="nav-logo" onclick="showPage('dashboard')">
+    <div class="nav-logo" routerLink="/home">
       <div class="nav-logo-icon">🛍</div>
       <div>
         <div class="nav-logo-text">Nova<span>Mart</span></div>
@@ -16,30 +16,32 @@
     </div>
 
     <!-- Nav Links -->
-    <div class="nav-links">
+    <!-- <div class="nav-links">
       <a id="nav-dashboard" class="active" onclick="showPage('dashboard')"
         >Home</a
       >
       <a id="nav-products" onclick="showPage('products')">Products</a>
       <a id="nav-favorites" onclick="showPage('favorites')">Favorites</a>
       <a id="nav-cart" onclick="showPage('cart')">Cart</a>
+    </div> -->
+
+    <div class="nav-links">
+      @for (item of menuItems; track $index) {
+        <a [routerLink]="item.slug" routerLinkActive="active">{{
+          item.label
+        }}</a>
+      }
     </div>
 
     <!-- Actions -->
     <div class="nav-actions">
-      <button
-        class="nav-icon-btn"
-        onclick="showPage('favorites')"
-        title="Favorites"
-      >
+      <button class="nav-icon-btn" title="Favorites" routerLink="/favorites">
         ♡<span class="badge" id="fav-badge">4</span>
       </button>
-      <button class="nav-icon-btn" onclick="showPage('cart')" title="Cart">
+      <button class="nav-icon-btn" routerLink="/carts" title="Cart">
         🛒<span class="badge" id="cart-badge">3</span>
       </button>
-      <div class="nav-avatar" onclick="showPage('profile')" title="Profile">
-        J
-      </div>
+      <div class="nav-avatar" routerLink="/profile" title="Profile">J</div>
     </div>
   </div>
 </nav>
