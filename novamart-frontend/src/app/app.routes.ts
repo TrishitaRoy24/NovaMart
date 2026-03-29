@@ -15,8 +15,9 @@ export const routes: Routes = [
       },
     ],
   },
-  // {
-  //   path: 'login',
-  //   loadComponent: ()=>
-  // }
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./features/auth/auth.routes').then((m) => m.AUTH_ROUTES),
+  },
 ];
