@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 // import { environment } from '../../../environments/environment';
 import { environment } from '../../../environments/environment';
+import { catchError, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -13,12 +14,8 @@ export class ProductService {
   constructor() {}
 
   getProductList() {
-    // return this.http.get(`${this.baseURL}/products`, {
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   observe: 'response',
-    // });
-    return this.http.get(`${this.baseURL}/products`);
+    return this.http
+      .get(`${this.baseURL}/products`)
+      .pipe(catchError((error) => throwError(() => error)));
   }
 }

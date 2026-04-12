@@ -1,1 +1,5 @@
-<p>product-list works!</p>
+@if (load) {
+  <pre>{{ productList | json }}</pre>
+} @else {
+  <p>Loading....</p>
+}

@@ -1,34 +1,30 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ProductService } from '../../../../core/services/product.service';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-product-list',
-  imports: [],
+  imports: [JsonPipe],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss',
 })
 export class ProductListComponent implements OnInit {
   productService = inject(ProductService);
 
+  load = false;
+  productList: any;
+
   ngOnInit(): void {
-    console.log('Hello');
-
-    // this.productService.getProductList().subscribe((result) => {
-    //   console.log(result);
-    // });
-    // let obj = this.productService.getProductList();
-    // console.log(obj.subscribe());
-
     this.productService.getProductList().subscribe({
-      next: (result) => {
-        console.log('Products:', result);
-        console.log(result);
+      next: (result: any) => {
+        console.log('Products:', result.data);
+        this.productList = result.data;
       },
-      error: (err) => {
-        console.error('Error fetching products:', err);
+      error: (err: any) => {
+        this.load = true;
       },
       complete: () => {
-        console.log('Request completed');
+        this.load = true;
       },
     });
   }
