@@ -5,7 +5,7 @@ nav {
   right: 0;
   z-index: 1000;
   height: var(--nav-h);
-  background: linear-gradient(100deg, #1a0c58 0%, #990836 50%, #6d3f14 100%);
+  background: var(--novamart-bg);
   box-shadow: 0 4px 32px rgba(108, 58, 232, 0.35);
   overflow: hidden;
   padding: 15px;
