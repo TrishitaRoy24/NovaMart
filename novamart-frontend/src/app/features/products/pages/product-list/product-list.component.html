@@ -1,5 +1,11 @@
-@if (load) {
-  <pre>{{ productList | json }}</pre>
-} @else {
-  <p>Loading....</p>
-}
+<div class="container">
+  @if (load) {
+    <div class="grid">
+      @for (item of productList; track $index) {
+        <product-card [productDetail]="item"></product-card>
+      }
+    </div>
+  } @else {
+    <p>Loading....</p>
+  }
+</div>

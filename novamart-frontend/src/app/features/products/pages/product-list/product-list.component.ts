@@ -1,10 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ProductService } from '../../../../core/services/product.service';
 import { JsonPipe } from '@angular/common';
+import { ProductCardComponent } from '../../../../shared/components/product-card/product-card.component';
 
 @Component({
   selector: 'app-product-list',
-  imports: [JsonPipe],
+  imports: [JsonPipe, ProductCardComponent],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss',
 })

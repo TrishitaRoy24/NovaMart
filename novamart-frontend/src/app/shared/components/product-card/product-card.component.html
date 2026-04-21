@@ -1,1 +1,35 @@
-<p>product-card works!</p>
+<!-- <div class="product">hjh</div> -->
+<div class="card">
+  <div class="card-top">
+    <span class="badge">SALE</span>
+    <button class="wishlist">♡</button>
+
+    <div class="product-img">
+      <img
+        src="https://unsplash.com/photos/black-and-silver-asus-laptop-computer-0uVSMGdeUKM"
+        alt="sunglasses"
+      />
+    </div>
+  </div>
+
+  <div class="card-bottom">
+    <p class="category">{{ productDetail.category }}</p>
+    <h3 class="title">{{ productDetail.name }}</h3>
+
+    <div class="rating">
+      <span class="stars">★★★★★</span>
+      <span class="count"
+        >{{ productDetail.rating }} ({{ productDetail.numReviews }})</span
+      >
+    </div>
+
+    <div class="price-row">
+      <div>
+        <span class="price">₹{{ productDetail.price }}</span>
+        <span class="old-price">₹220</span>
+      </div>
+
+      <button class="add-btn">+</button>
+    </div>
+  </div>
+</div>
