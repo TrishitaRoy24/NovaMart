@@ -9,7 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-family: "Segoe UI", sans-serif;
+  // font-family: "Segoe UI", sans-serif;
 }
 
 .card {
@@ -45,13 +45,12 @@ body {
       position: absolute;
       top: 12px;
       right: 12px;
-      width: 34px;
-      height: 34px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       border: none;
       background: #f1eef5;
       cursor: pointer;
-      font-size: 16px;
     }
 
     .product-img img {
@@ -115,6 +114,7 @@ body {
       .add-btn {
         width: 40px;
         height: 40px;
+        padding: 9px;
         border-radius: 12px;
         border: none;
         font-size: 20px;
