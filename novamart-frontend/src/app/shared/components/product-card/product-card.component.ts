@@ -1,9 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'product-card',
-  imports: [JsonPipe],
+  imports: [],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.scss',
 })
