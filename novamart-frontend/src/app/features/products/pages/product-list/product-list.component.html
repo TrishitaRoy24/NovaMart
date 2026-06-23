@@ -1,11 +1,41 @@
 <div class="container">
   @if (load) {
-    <div class="grid">
-      @for (item of productList; track $index) {
-        <product-card [productDetail]="item"></product-card>
-      }
+    <div class="row"></div>
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-10">
+        <div class="grid">
+          @for (item of productList; track $index) {
+            <product-card [productDetail]="item"></product-card>
+          }
+        </div>
+      </div>
     </div>
   } @else {
-    <p>Loading....</p>
+    <div class="skeleton-container">
+      <!-- Header -->
+      <header class="header-skeleton">
+        <div class="logo-skeleton"></div>
+        <div class="search-skeleton"></div>
+      </header>
+
+      <!-- Sale Section -->
+      <section class="section-skeleton">
+        <div class="section-title-skeleton"></div>
+        <div class="product-grid">
+          @for (item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; track $index) {
+            <div class="product-card-skeleton">
+              <div class="image-skeleton"></div>
+              <div class="title-skeleton"></div>
+              <div class="rating-skeleton"></div>
+              <div class="price-skeleton"></div>
+            </div>
+          }
+        </div>
+      </section>
+    </div>
+  }
+  @if (isError) {
+    <p>Something went wrong. Please try again later.</p>
   }
 </div>
